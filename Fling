@@ -1,0 +1,20 @@
+--local resettimer = 1
+local Rootpart = game.Players.LocalPlayer.Character.HumanoidRootPart
+local SpawnedCars = game:GetService("Workspace").SpawnedCars
+if SpawnedCars.parent == game:GetService("Workspace") then
+	
+	for _, child in pairs(SpawnedCars:GetChildren()) do
+		for _, childD in pairs(child:GetDescendants()) do
+			if childD:IsA("Part") then
+				while wait() do
+
+					Rootpart.Position = childD.Position
+					--print("Gg")
+				end
+
+			end
+
+		end
+		--print(child.Name)
+	end
+end
